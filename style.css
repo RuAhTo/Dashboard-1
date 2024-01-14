@@ -1,7 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Fira Sans', sans-serif;}
+    font-family: 'Fira Sans', sans-serif;
+}
 body{
     background-color: #0095ff;
     font-size: 16px;
@@ -21,6 +22,66 @@ header{
     align-items: center;
     margin-bottom: 8rem;
 }
+#welcome-page{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: slideOut 1.5s ease-in-out 1.8s;
+}
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}
+
+#welcome-page h1{
+  font-size: 6rem;
+  font-style: italic;
+  font-weight: 100;
+  margin-bottom: 1rem;
+  animation: slideIn 1.5s ease-in-out;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(-5);
+  }
+  90% {
+    transform: translateX(1%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+#main-page {
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .clock-date-container{
     margin-top: 1rem;
     background-color: #0000004b;

@@ -1,41 +1,63 @@
 const time = document.querySelector('#time');
 const date = document.querySelector('#date');
+
 const editor = new Quill('#editor', {
-    theme: 'snow',
-    placeholder: 'Skriv något...',
-    bounds: '#editor-container',
-    modules: {
-      toolbar: [
-        [{ 'header': [1, 2, false] }],                       // Headers
-        ['bold', 'italic', 'underline', 'strike'],          // Text formatting options
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],      // Ordered and unordered lists
-      ]
-    }
-  });
+  theme: 'snow',
+  placeholder: 'Skriv något...',
+  bounds: '#editor-container',
+  modules: {
+    toolbar: [
+      [{ 'header': [1, 2, false] }],                       // Headers
+      ['bold', 'italic', 'underline', 'strike'],          // Text formatting options
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],       // Ordered and unordered lists
+    ]
+  }
+});
 
 function updateClock() {
   const now = new Date();
   const hours = now.getHours().toString().padStart(2, '0');
   const minutes = now.getMinutes().toString().padStart(2, '0');
   const timeString = `${hours}:${minutes}`;
-  const options = {month: 'short', day: 'numeric' };
+  const options = { month: 'short', day: 'numeric' };
   const dateString = now.toLocaleDateString('en-EN', options);
   time.innerText = `${timeString}`;
   date.innerText = `${dateString}`;
 }
 
-// Uppdatera klockan direkt
+// Update the clock immediately
 updateClock();
 
-// Uppdatera klockan varje sekund
+// Update the clock every second
 setInterval(updateClock, 1000);
 
-import { createApi } from 'unsplash-js';
+function loadNotes() {
+  const savedText = localStorage.getItem('text');
+  if (savedText) {
+    editor.root.innerHTML = savedText;
+  }
+}
 
-const serverApi = createApi({
-  accessKey: 'WWaa0MhT1V_IfQ_E0T949JQW0L2-HvWjjXdEq0fUrFY',
+// Call the loadNotes function to retrieve and display the saved notes
+loadNotes();
+
+function saveNotes() {
+  const text = editor.root.innerHTML;
+  localStorage.setItem('text', text);
+}
+
+editor.on('text-change', function() {
+  saveNotes();
 });
 
-const browserApi = createApi({
-  apiUrl: 'http://127.0.0.1:5500/',
+
+// Welcome page
+window.addEventListener('load', function() {
+  const loadingScreen = document.getElementById('welcome-page');
+  const pageContent = document.getElementById('main-page');
+
+  setTimeout(function() {
+    loadingScreen.style.display = 'none';
+    // pageContent.style.display = 'block';
+  }, 3000);
 });
