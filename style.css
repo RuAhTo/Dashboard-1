@@ -4,7 +4,6 @@
     font-family: 'Fira Sans', sans-serif;}
 body{
     background-color: #0095ff;
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: #333;
@@ -58,8 +57,7 @@ header{
     flex-direction: row;
 }
 .content-card {
-    background-color: #b7b7b74b;
-    /* padding: 8rem; */
+    background-color: #0000004b;
     border-radius: 2rem;
     width: 22rem;
     height: 26rem;
@@ -72,6 +70,7 @@ header{
     height: 100%;
     border-radius: 2rem;
     border: none;
+    color: white;
 
 }
 .ql-toolbar.ql-snow {
@@ -80,3 +79,8 @@ header{
     padding: 8px;
     border: none !important;
 }
+.ql-editor {
+    font-family: 'Fira Sans', sans-serif;
+    color: white;
+  }
+  

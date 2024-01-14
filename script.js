@@ -4,7 +4,6 @@ const editor = new Quill('#editor', {
     theme: 'snow',
     placeholder: 'Skriv något...',
     bounds: '#editor-container',
-    style: 'border: none;',
     modules: {
       toolbar: [
         [{ 'header': [1, 2, false] }],                       // Headers
@@ -30,3 +29,13 @@ updateClock();
 
 // Uppdatera klockan varje sekund
 setInterval(updateClock, 1000);
+
+import { createApi } from 'unsplash-js';
+
+const serverApi = createApi({
+  accessKey: 'WWaa0MhT1V_IfQ_E0T949JQW0L2-HvWjjXdEq0fUrFY',
+});
+
+const browserApi = createApi({
+  apiUrl: 'http://127.0.0.1:5500/',
+});
