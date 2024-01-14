@@ -28,6 +28,15 @@ header{
     padding: 1rem;
     width: 16rem;
     border-radius: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.clock-date-container h1{
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
 }
 .main-container{
     width: 100vw;

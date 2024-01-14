@@ -1,9 +1,19 @@
-const dateTime = document.querySelector('#dateTime');
+const time = document.querySelector('#time');
+const date = document.querySelector('#date');
 
-options = {
-    hour: 'numeric', minute: 'numeric',
-    year: 'numeric', month: 'long', day: 'numeric',
-  };
-  const clock = () => dateTime.innerText=new Intl.DateTimeFormat('en-EN', options).format(new Date())
-  clock()
-  setInterval(clock, 1000);
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const timeString = `${hours}:${minutes}`;
+  const options = {month: 'short', day: 'numeric' };
+  const dateString = now.toLocaleDateString('en-EN', options);
+  time.innerText = `${timeString}`;
+  date.innerText = `${dateString}`;
+}
+
+// Uppdatera klockan direkt
+updateClock();
+
+// Uppdatera klockan varje sekund
+setInterval(updateClock, 1000);
