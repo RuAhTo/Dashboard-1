@@ -20,7 +20,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 8rem;
+    margin-bottom: 12rem;
 }
 #welcome-page{
   position: fixed;
@@ -34,14 +34,14 @@ header{
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  animation: slideOut 1.5s ease-in-out 1.8s;
+  animation: slideOut 1.5s ease-in-out 1.6s;
 }
 @keyframes slideOut {
   0% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   100% {
-    transform: translateX(-150%);
+    transform: translateY(-150%);
   }
 }
 
@@ -54,7 +54,7 @@ header{
 }
 @keyframes slideIn {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
     opacity: 0;
   }
   80% {
@@ -68,8 +68,6 @@ header{
     opacity: 1;
   }
 }
-#main-page {
-}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -81,9 +79,15 @@ header{
     opacity: 1;
   }
 }
+#main-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 .clock-date-container{
-    margin-top: 1rem;
+    margin-top: 2.5rem;
     background-color: #0000004b;
     padding: 0.5rem;
     width: 12rem;
@@ -105,11 +109,13 @@ header{
     font-weight: 600;
 }
 .main-container{
-    width: 100vw;
+    width: 95vw;
     height: 100vh;
+    margin: 0.5rem 1rem;
+    display: flex;
 }
 .content-container{
-    width: 100vw;
+    width: 95vw;
     height: 100vh;
     gap: 1rem;
     display: flex;
@@ -121,11 +127,21 @@ header{
     background-color: #0000004b;
     border-radius: 2rem;
     width: 22rem;
-    height: 26rem;
+    height: 28rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
+.favorite-link{
+    border: 1px solid #fff;
+    border-radius: .2rem;
+    margin: 1rem .8rem;
+    padding: 1.2rem;
+    height: .5rem;
+    background-color: #f1f1f1;
+
+}
+/* Note style */
 #editor{
     width: 100%;
     height: 100%;
@@ -144,4 +160,4 @@ header{
     font-family: 'Fira Sans', sans-serif;
     color: white;
   }
-  
+/* Note style */

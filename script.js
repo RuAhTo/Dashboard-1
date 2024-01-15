@@ -1,3 +1,11 @@
+// Welcome page
+window.addEventListener('load', function() {
+  const loadingScreen = document.getElementById('welcome-page');
+
+  setTimeout(function() {
+    loadingScreen.style.display = 'none';
+  }, 3000);
+});
 const time = document.querySelector('#time');
 const date = document.querySelector('#date');
 
@@ -51,13 +59,3 @@ editor.on('text-change', function() {
 });
 
 
-// Welcome page
-window.addEventListener('load', function() {
-  const loadingScreen = document.getElementById('welcome-page');
-  const pageContent = document.getElementById('main-page');
-
-  setTimeout(function() {
-    loadingScreen.style.display = 'none';
-    // pageContent.style.display = 'block';
-  }, 3000);
-});
