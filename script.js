@@ -1,11 +1,15 @@
-// Welcome page
+// Welcome page / On load functions
 window.addEventListener('load', function() {
   const loadingScreen = document.getElementById('welcome-page');
-
+  // let weatherData = getWeather();
+  // console.log(weatherData)
   setTimeout(function() {
     loadingScreen.style.display = 'none';
+    console.log('loaded');
   }, 3000);
 });
+
+//Date and Time
 const time = document.querySelector('#time');
 const date = document.querySelector('#date');
 
@@ -57,5 +61,3 @@ function saveNotes() {
 editor.on('text-change', function() {
   saveNotes();
 });
-
-
