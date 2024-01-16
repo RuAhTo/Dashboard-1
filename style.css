@@ -4,7 +4,7 @@
     font-family: 'Fira Sans', sans-serif;
 }
 body{
-    background-color: #0095ff;
+    background-color: #00becf;
     font-size: 16px;
     line-height: 1.5;
     color: #333;
@@ -13,7 +13,7 @@ body{
 }
 header{
     height: 2rem;
-    background-color: #0095ff;
+    background-color: #00becf;
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -163,6 +163,26 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+#weather{
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+#weather input{
+  margin: 4rem 1.5rem 1.2rem 1.5rem;
+  padding: .6rem;
+  border-radius: .6rem;
+  outline: none;
+  border: none;
+}
+#weather button{
+  background: white;
+  padding: .6rem;
+  border-radius: .6rem;
+  border: none;
 }
 /* spinner */
 .lds-ripple {
@@ -209,5 +229,17 @@ header{
     width: 72px;
     height: 72px;
     opacity: 0;
+  }
+}
+
+.fadeIn{
+  animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn{
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
   }
 }
