@@ -322,22 +322,22 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   margin: 1rem;
 }
 
-#favLinkSearch {
-  padding: 0.6rem;
-  border-radius: 0.6rem 0 0 0.6rem;
+#fav-link-input, #fav-title-input {
+  padding: 0.4rem;
+  border-radius: 0.6rem;
+  margin: .2rem;
   outline: none;
   border: none;
-  display: flex;
 }
 
 #favSubmit {
   background: white;
-  padding: 0.6rem;
-  border-radius: 0 0.6rem 0.6rem 0;
+  padding: 0.4rem;
+  border-radius: .6rem;
   border: none;
 }
 #favorites{
@@ -367,4 +367,14 @@ footer button{
   cursor: pointer;
   padding: 1rem;
   border-radius: .5rem;
+}
+.remove-link{
+  background: none;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  color: black;
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: .4rem;
+  border-radius: 50%;
 }
