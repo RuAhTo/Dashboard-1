@@ -1,13 +1,12 @@
 // Welcome page / On load functions
-window.addEventListener('load', function() {
+function welcomePage() {
   const loadingScreen = document.getElementById('welcome-page');
-  // let weatherData = getWeather();
-  // console.log(weatherData)
   setTimeout(function() {
     loadingScreen.style.display = 'none';
     console.log('loaded');
   }, 3000);
-});
+}
+welcomePage();
 
 //Date and Time
 const time = document.querySelector('#time');
