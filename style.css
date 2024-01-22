@@ -87,7 +87,7 @@ header {
 /* Clock and date container styles */
 .clock-date-container {
   margin-top: 5rem;
-  background-color: #0000004b;
+  background-color: #000000be;
   padding: 0.5rem;
   width: 12rem;
   border-radius: 2rem;
@@ -152,7 +152,7 @@ header {
 
 /* Content card styles */
 .content-card {
-  background-color: #00000081;
+  background-color: #000000cb;
   border-radius: 2rem;
   width: 22rem;
   height: 28rem;
@@ -411,4 +411,49 @@ h2{
 #weather p{
   font-weight: 200;
   margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+  }
+  .main-container{
+      display: flex;
+      flex-direction: column;
+  }
+  .content-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+ #main-page{
+  display: flex;
+  flex-direction: column;
+ }
+ footer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: last baseline;
+ } 
+ footer button{
+  width: 8rem;
+  margin: 2rem;
+ }
+}
+
+@media screen and (max-width: 450px){
+  body{
+    background-size: auto;
+  }
+  .main-container{
+    width: 100%;
+  }
+  .content-card{
+  }
 }
