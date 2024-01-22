@@ -31,11 +31,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <h2>${cityName}</h2>
                     <p>${temperature}°C</p>
                     <p>${description}</p>
-                    <input type="search" id="city-search" placeholder="Search...">
-                    <button id="search-button">Search</button>
-                    <div class="suggestions">
-                    <ul id="suggestions-list"></ul>
-                    </div>
                 </div>`;
 
             const weatherIcon = document.getElementById('weather-icon');
@@ -80,11 +75,6 @@ async function searchWeather() {
                 <h2>${cityName}</h2>
                 <p>${temperature}°C</p>
                 <p>${description}</p>
-                <input type="search" id="city-search" placeholder="Search...">
-                <button id="search-button">Search</button>
-                <div class="suggestions">
-                <ul id="suggestions-list"></ul>
-                </div>
             </div>`;
 
         const weatherIcon = document.getElementById('weather-icon');

@@ -60,3 +60,25 @@ function saveNotes() {
 editor.on('text-change', function() {
   saveNotes();
 });
+
+// Save the title to local storage
+const editableTitle = document.querySelector('.user-title');
+
+function saveTitle() {
+  const title = editableTitle.innerText.trim() || 'Dashboard';
+  localStorage.setItem('editableTitle', title);
+}
+
+function loadTitle() {
+  const savedTitleValue = localStorage.getItem('editableTitle');
+  editableTitle.innerText = savedTitleValue || 'Dashboard';
+}
+
+// Call loadTitle when the page loads
+window.addEventListener('load', loadTitle);
+
+// Save the title when the user stops editing (blur event)
+editableTitle.addEventListener('blur', saveTitle);
+
+// Save the title on every input change (input event)
+editableTitle.addEventListener('input', saveTitle);
