@@ -26,12 +26,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             const iconUrl = `http://openweathermap.org/img/w/${iconCode}.png`;
 
             weatherContainer.innerHTML = `
-                <div>
+                <h2>Current Weather</h2>
                     <img id="weather-icon" src="${iconUrl}" alt="Weather Icon">
                     <h2>${cityName}</h2>
                     <p>${temperature}°C</p>
-                    <p>${description}</p>
-                </div>`;
+                    <p>${description}</p>`;
 
             const weatherIcon = document.getElementById('weather-icon');
             weatherIcon.src = iconUrl;
@@ -52,38 +51,3 @@ document.addEventListener('DOMContentLoaded', async () => {
 function kelvinToCelsius(kelvin) {
     return kelvin - 273.15;
 }
-
-async function searchWeather() {
-    const cityInput = document.getElementById('city-search');
-    const cityName = cityInput.value;
-    const encodedCityName = encodeURIComponent(cityName); // Kodar inmatningen för att hantera specialtecken
-
-    const searchURL = `https://api.openweathermap.org/data/2.5/weather?q=${encodedCityName}&appid=${WEATHER_KEY}`;
-    const response = await fetch(searchURL);
-    const data = await response.json();
-
-    // Hantera väderdata och uppdatera gränssnittet
-    if (response.ok) {
-        const temperature = kelvinToCelsius(data.main.temp).toFixed(1);
-        const description = data.weather[0].description;
-        const iconCode = data.weather[0].icon;
-        const iconUrl = `http://openweathermap.org/img/w/${iconCode}.png`;
-
-        weatherContainer.innerHTML = `
-            <div>
-                <img id="weather-icon" src="${iconUrl}" alt="Weather Icon">
-                <h2>${cityName}</h2>
-                <p>${temperature}°C</p>
-                <p>${description}</p>
-            </div>`;
-
-        const weatherIcon = document.getElementById('weather-icon');
-        weatherIcon.src = iconUrl;
-    } else {
-        // Visa felmeddelande om sökningen misslyckades
-        console.error('Fel vid sökning av väder:', data.message);
-    }
-}
-
-// const searchButton = document.getElementById('search-button');
-// searchButton.addEventListener('click', searchWeather);

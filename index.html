@@ -10,8 +10,8 @@
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script type="module" src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script type="module" src="unsplash.js"></script>
+    <script type="module" src="Dictionary.js"></script>
     <script type="module" src="favIcon.js" defer></script>
-    <script type="module" src="/script/API_KEYS.js"></script>
     <script type="module" src="/script/weather.js"></script>
     <script type="module" src="script.js"></script>
     <title>Dashboard</title>
@@ -44,10 +44,12 @@
                                 <div></div>
                             </div>
                         </div>
-                        <div id="weather"></div>
+                        <div id="weather">
+                        </div>
                     </div>
                     <!-- favIcons -->
                     <div class="content-card" id="favorite-Links">
+                        <h2>Favorites</h2>
                         <div id="favorites">
                             <!-- <div class="favorite-link" id="fav1"></div> -->
                         </div>
@@ -58,7 +60,17 @@
                         </div>
                     </div>
                     <!-- Note editor -->
-                    <div class="content-card" id="tba"></div>
+                    <div class="content-card" id="dic-container">
+                        <div class="dictionary-title">
+                            <h2>Dictionary</h2>
+                        </div>
+                        <div id="results-3">
+                        </div>
+                        <div class="dic-input-container">
+                            <input type="search" name="dnd-search" id="input-3" placeholder="Search Dictionary">
+                            <button type="submit" id="submit-3">Search</button>
+                        </div>
+                    </div>
                     <div class="content-card" id="notes">
                         <div id="editor"></div>
                     </div>

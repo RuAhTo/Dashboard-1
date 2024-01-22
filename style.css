@@ -64,11 +64,8 @@ header {
 
 @keyframes slideIn {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-80%);
     opacity: 0;
-  }
-  80% {
-    transform: translateX(-5%);
   }
   90% {
     transform: translateX(1%);
@@ -161,7 +158,6 @@ header {
   height: 28rem;
   display: flex;
   justify-content: center;
-  flex-direction: column;
 }
 
 /* Favorite link styles */
@@ -195,7 +191,12 @@ header {
   border: none;
   color: white;
 }
-
+#notes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .ql-toolbar.ql-snow {
   box-sizing: border-box;
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -209,10 +210,9 @@ header {
 }
 
 /* Card and weather styles */
-#card-1,
 #weather {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   flex-direction: column;
@@ -222,21 +222,6 @@ header {
   color: white;
   display: flex;
   flex-direction: column;
-}
-
-#weather input {
-  margin: 4rem 1.5rem 1.2rem 1.5rem;
-  padding: 0.6rem;
-  border-radius: 0.6rem;
-  outline: none;
-  border: none;
-}
-
-#weather button {
-  background: white;
-  padding: 0.6rem;
-  border-radius: 0.6rem;
-  border: none;
 }
 
 /* Spinner styles */
@@ -315,6 +300,8 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
+  color: white;
 }
 
 /* Favorite search container styles */
@@ -377,4 +364,48 @@ footer button{
   margin-left: 1rem;
   padding: .4rem;
   border-radius: 50%;
+}
+#dic-container{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dic-input-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+}
+.dic-input-container input{
+  padding: 0.4rem;
+  border-radius: 0.6rem;
+  margin: .2rem;
+  outline: none;
+  border: none;
+}
+.dic-input-container button{
+  background: white;
+  padding: 0.4rem;
+  border-radius: .6rem;
+  border: none;
+}
+#results-3{
+  margin: 1rem;
+  color: white;
+  padding: 3rem;
+  height: 15rem;
+}
+#results-3 p{
+  color: white;
+  font-weight: 200;
+}
+h2{
+  font-weight: 200;
+}
+#weather{
+  display: flex;
+  justify-content: space-evenly;
 }

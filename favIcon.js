@@ -4,6 +4,7 @@ const favTitle = document.querySelector("#fav-title-input");
 const favSubmit = document.querySelector("#favSubmit");
 const addBtn = document.querySelector("#add-favorite");
 let links = []; // Array to store the entered links
+const MAX_LINKS = 4;
 
 // Load links from localStorage when the page is loaded
 window.addEventListener("load", () => {
@@ -21,6 +22,10 @@ favSubmit.addEventListener("click", () => {
     const favId = `fav${Date.now()}`; // Generate a unique id using the current timestamp
 
     // Validate the entered URL
+    if (links.length >= MAX_LINKS) {
+        console.log("Maximum number of links reached");
+        return; // Exit the function without adding the link
+    }
     if (isValidURL(link)) {
         favContainer.classList.remove("errorMsg"); // Clear the container
         links.push({ id: favId, link: link, title: title }); // Store the link and title in the array
