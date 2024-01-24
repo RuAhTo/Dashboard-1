@@ -1,16 +1,20 @@
-const WEATHER_KEY = 'd180688fee495a43622ecaa22e844914';
 let URL = '';
+const key = 'd180688fee495a43622ecaa22e844914';
 
 async function getData(latitude, longitude) {
-    URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_KEY}`;
-    const response = await fetch(URL);
-    return await response.json();
-}
+    try {
+        URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
+      const response = await axios.get(URL);
+      return await response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
 const loadingScreen = document.getElementById('loading-screen');
 const weatherContainer = document.getElementById('weather');
 
-document.addEventListener('DOMContentLoaded', async () => {
+async function getWeather(){
     console.log('Page loaded');
     loadingScreen.style.display = 'block'; // Show loading screen
 
@@ -46,8 +50,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Geolocation stöds inte av webbläsaren.');
         loadingScreen.style.display = 'none'; // Hide loading screen in case of error
     }
-});
+};
 
 function kelvinToCelsius(kelvin) {
     return kelvin - 273.15;
 }
+
+export {getWeather};
