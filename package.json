@@ -1,5 +1,16 @@
 {
   "dependencies": {
+    "axios": "^1.6.5",
     "unsplash-js": "^7.0.19"
-  }
+  },
+  "name": "dashboard-1",
+  "description": "Dashboard projekt för inlämning",
+  "version": "1.0.0",
+  "main": "Dictionary.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
