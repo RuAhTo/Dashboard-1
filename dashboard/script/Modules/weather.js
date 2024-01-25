@@ -1,6 +1,4 @@
-const apiKey = import.meta.env.VITE_weatherKey;
-console.log(apiKey);
-
+const apiKey = 'd180688fee495a43622ecaa22e844914'
 let URL = '';
 
 async function getData(latitude, longitude) {
