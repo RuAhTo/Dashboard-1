@@ -1,8 +1,4 @@
-import dotenv from 'dotenv';
-dotenv.config();
-const apiKey = process.env.weatherKey;
-
-// Använd apiKey som du behöver i din kod nedan
+const apiKey = import.meta.env.VITE_weatherKey;
 console.log(apiKey);
 
 let URL = '';
@@ -11,7 +7,6 @@ async function getData(latitude, longitude) {
     try {
         URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
       const response = await axios.get(URL);
-      console.log(response.data());
       return await response.data;
     } catch (error) {
       console.error(error);
