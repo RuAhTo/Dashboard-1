@@ -17,4 +17,4 @@ window.addEventListener("load", fetchAndApplyBackground);
 const rndmImg = document.getElementById("randomImg");
 rndmImg.addEventListener("click", fetchAndApplyBackground);
 
-export {fetchAndApplyBackground, rndmImg}
+export {fetchAndApplyBackground, rndmImg};

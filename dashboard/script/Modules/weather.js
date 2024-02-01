@@ -1,20 +1,16 @@
-const apiKey = 'd180688fee495a43622ecaa22e844914'
 let URL = '';
+const apiKey = 'd180688fee495a43622ecaa22e844914'
 
 async function getData(latitude, longitude) {
-    try {
-        URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
-      const response = await axios.get(URL);
-      return await response.data;
-    } catch (error) {
-      console.error(error);
-    }
-  }
+    URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+    const response = await fetch(URL);
+    return await response.json();
+}
 
 const loadingScreen = document.getElementById('loading-screen');
 const weatherContainer = document.getElementById('weather');
 
-async function getWeather(){
+function getWeather() {
     console.log('Page loaded');
     loadingScreen.style.display = 'block'; // Show loading screen
 
