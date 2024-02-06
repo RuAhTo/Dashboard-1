@@ -1,4 +1,7 @@
-const apiUrl = "https://api.unsplash.com/photos/random?count=1&client_id=tJ7HlQrRKoNDAlGKe62cEsw66ljdcn4ewI8sH5SSH_k";
+//Insert your API key below
+const apiKey = XXXX
+
+const apiUrl = `https://api.unsplash.com/photos/random?count=1&client_id=${apiKey}`;
 
 function fetchAndApplyBackground() {
     fetch(apiUrl)

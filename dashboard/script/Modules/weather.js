@@ -1,5 +1,6 @@
+//Insert your Key below in "apiKey"
+const apiKey = XXXX
 let URL = '';
-const apiKey = 'd180688fee495a43622ecaa22e844914'
 
 async function getData(latitude, longitude) {
     URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
