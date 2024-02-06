@@ -1,39 +1,64 @@
-# Dashboard Uppgift  
+# Dashboard Uppgift
 
-En personlig dashboard med funktioner som väder,favoritlänkar, ordbok och anteckningar.
+A personalized dashboard offering weather updates, favorite links, a dictionary, and a notepad.
 
 ## Installation
 
-1. npm install in terminal
-2. add api keys to weather.js and unsplash.js
-3. npm run dev in terminal
+1. Run `npm install` in the terminal.
+2. Add your API keys to the respective files: `weather.js` and `unsplash.js`.
+3. Execute `npm run dev` in the terminal.
 
 ## Usage
 
+**Customize the title:**
+- Click anywhere on the title, remove the default text, and input your text.
+- Click anywhere else to save the title in local storage.
 
+**Weather updates:**
+- The weather feature utilizes geolocation; ensure you accept the request to access your location.
+
+**Save favorite links:**
+- Provide a title and insert the link.
+- Submit the form (Note: Use a full link format like "http://www.example.com").
+
+**Dictionary:**
+- Search for a word to use the integrated dictionary.
+
+**Notepad:**
+- The notepad saves automatically upon input and persists until the user removes it.
+
+**Random background:**
+- Press the "random background" button to switch to a new background.
 
 ## Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Local clock and date
+- Customizable title (defaults to "Dashboard" if empty)
+- Weather updates via geolocation (requires user consent)
+- Save favorite links with custom titles
+- Integrated dictionary
+- Notepad for quick notes
+- Regenerate random background picture
 
 ## Documentation
 
-Provide links or instructions to access additional documentation or user guides.
+For additional details and user guides, refer to the following documentation:
+
+- OpenWeatherMap API Guide for API Key: [OpenWeatherMap Guide](https://openweathermap.org/guide)
+- Unsplash Image API Guide for API Key: [Unsplash Developer Guide](https://unsplash.com/developers)
 
 ## Contributing
 
-Specify guidelines for contributing to the project.
+We welcome contributions! If you'd like to contribute to the project, please follow our guidelines outlined in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-Specify the project's license and any relevant copyright or attribution notices.
+This project is not licensed.
 
 ## Contact
 
-Provide contact information for support or inquiries.
+If you need support or have any questions, feel free to contact us at Ruben.Ahlin@Chasacademy.com.
 
 ## Acknowledgments
 
-Acknowledge any third-party libraries, frameworks, or resources used in the project.
+This project is built with Vite and utilizes Axios for seamless API interactions. We appreciate the contributions of these and other open-source projects that make this dashboard possible.
